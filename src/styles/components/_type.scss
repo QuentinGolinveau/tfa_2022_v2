@@ -1,0 +1,747 @@
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-size: $size-text;
+  color: $c-text;
+  font-family: 'Francois One', sans-serif;
+  font-weight: 400;
+  line-height:1.4;
+  overflow-x: hidden;
+}
+.header{
+  display: flex;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/images/air-jordan-12.png);
+  background-position-x: 25%;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 32px 0;
+  &__el{
+    &--logo{
+      height: 40px;
+    }
+    &--img{
+      img{
+        width: 160px;
+      }
+    }
+    &--down{
+      height: 56px;
+      .down-arrow{
+        fill:white;
+        animation: down 1s infinite linear alternate;
+        svg{
+          width: 56px;
+        }
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
+@keyframes down{
+	0% {position:relative; top:-20px; opacity: 0.1}
+	50% {position:relative; top:-5px; opacity: 0.5}
+	100% {position:relative; top:10px; opacity: 1}
+}
+
+.casestudy{
+  font-family: 'Open sans', sans-serif;
+  .section{
+    display: grid;
+    grid-template-columns: 1.5em 1fr;
+    column-gap: 0.5em;
+    &--title{
+      font-size: $size-h3;
+      margin: 24px 0 16px;
+      grid-row: 1;
+      grid-column: 1/-1;
+      text-align:left;
+    }
+  }
+  .footer{
+    &--liste{
+      .lien{
+        width: 72px;
+        text-align: center;
+      }
+    }
+  }
+}
+.bold{
+  font-weight: 600;
+}
+main{
+  margin: 0 16px;
+  scroll-behavior: smooth;
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color:$c-text;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: $c-blanc;
+    background-color: $c-green;
+    text-decoration: underline $c-blanc;
+  }
+  &:visited{
+    color: $c-blanc;
+    background-color: $c-text;
+    text-decoration: underline $c-blanc;
+  }
+
+}
+picture{
+  img{
+    width:-webkit-fill-available;
+  }
+}
+.title{
+  margin: 26px 0 0 16px;
+  font-size: 16px;
+  color: $c-text;
+  a{
+    color: $c-text;
+    &:hover{
+      cursor: pointer;
+      text-decoration: none;
+    }
+    &:active,&:visited{
+      text-decoration: none;
+      background-color: initial;
+    }
+  }
+  &--second{
+    font-size: $size-h2;
+    text-align: center;
+  }
+  &--span{
+    line-height:1;
+    color: $c-green;
+  }
+  &--h4,&--h5{
+    color: $c-blanc;
+    margin: 13px 0;
+    font-style: italic;
+    font-weight:600;
+    display: flex;
+    align-items: center;
+  }
+  &--h4{
+    justify-content:center;
+    font-size: $size-h4;
+  }
+  &--h5{
+    font-size: $size-h5;
+  }
+}
+
+
+.section{
+  padding: 160px 0 0;
+  &--banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo{
+      height: 64px;
+      margin-bottom: 32px;
+    }
+    .download{
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      height: 40px;
+      width: 100%;
+      li:nth-child(1){
+        margin-right:32px;
+      }
+      &--image{
+        height:40px;
+      }
+    }
+    .qr{
+      margin-top: 100px;
+      width: 100vw;
+      background-image: url(../assets/images/nadal_2.png);
+      background-repeat: no-repeat;
+      height: 512px;
+      background-position-x: 70%;
+      background-position-y: 90%;
+      &__el{
+        display: none;
+      }
+    }
+  }
+  &--marque{
+    .texte{
+      margin-top: 32px;
+    }
+    .montage{
+      position: relative;
+      height: 250px;
+      display: flex;
+      flex-direction: row;
+      width: 180px;
+      margin: 40px auto 0;
+      &__el{
+        width:120px;
+        position: absolute;
+        &--marques{
+          top: 10px;
+        }
+        &--start{
+          left:60px;
+        }
+      }
+    }
+  }
+  &--choix{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .choix{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 512px;
+      margin-top: 40px;
+      background-image: url(../assets/images/aliassime.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: -120px;
+      .video{
+        width: 160px;
+      }
+    }
+  }
+  &--download{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding-bottom: 200px;
+    .download{
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      height: 40px;
+      width: 100%;
+      li:nth-child(1){
+        margin-right:32px;
+      }
+      &--image{
+        height:40px;
+      }
+    }
+  }
+  &--planche{
+    margin: 48px 0;
+    height: 70vw;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    .img, .title{
+      grid-column: 1/-1;
+    }
+    .title{
+      margin-bottom:64px;
+      font-size: $size-h2;
+      text-align: left;
+    }
+    .img{
+      width:100vw;
+    }
+  }
+  &--projet{
+    .texte{
+      grid-row: 2;
+      grid-column: 2/-1;
+    }
+    .cita{
+      align-self: center;
+      font-size:$size-cita;
+      font-style: italic;
+      grid-row: 3;
+      grid-column: 1/-1;
+    }
+  }
+  &--recherche{
+    .texte{
+      grid-row: 2;
+      grid-column: 2/-1;
+    }
+    .cita{
+      align-self: center;
+      font-size:$size-cita;
+      font-style: italic;
+      grid-row: 4;
+      grid-column: 1/-1;
+    }
+    .content{
+      grid-row: 3;
+      grid-column: 1/-1;
+      margin: 0 -16px;
+    }
+    .slideshow-container{
+      padding: 24px;
+    }
+  }
+  &--probleme{
+      .texte{
+        grid-row: 2;
+        grid-column: 2/-1;
+      }
+      .icon-liste{
+        grid-row: 3;
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 64px 0;
+      }
+      .liste{
+        grid-row: 4;
+        grid-column: 1/-1;
+        background-color: $c-green;
+        color: $c-blanc;
+        margin: 0 -16px;
+        padding: 24px;
+        li{
+          margin: 32px 0;
+        }
+      }
+      .cita{
+        align-self: center;
+        font-size:$size-cita;
+        font-style: italic;
+        grid-row: 5;
+        grid-column: 1/-1;
+      }
+  }
+  &--test{
+      .texte{
+        grid-row: 2;
+        grid-column: 2/-1;
+      }
+      .img{
+        grid-row: 3;
+        grid-column: 1/-1;
+      }
+  }
+  &--final,&--test{
+    margin-bottom: 64px;
+  }
+  &--final{
+      .texte{
+        grid-row: 2;
+        grid-column: 2/-1;
+      }
+      .img{
+        grid-row: 3;
+        grid-column: 1/-1;
+      }
+  }
+}
+.texte{
+  margin: 0;
+  max-width: 500px;
+}
+.icon{
+  margin:16px;
+  width: 25vw;
+  &--arrow{
+    width:10vw;
+  }
+}
+.footer{
+  padding: 40px 0 60px 32px;
+  background-color: $c-text;
+  &--title{
+    margin: 0;
+  }
+  .liste{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0;
+    &__el{
+      margin: 12px;
+    }
+  }
+  a{
+    color: $c-blanc;
+  }
+  .span{
+    display: none;
+  }
+  .dwt{
+    width:48px;
+  }
+}
+.figcaption{
+  font-size:$size-fig;
+  font-weight: 400;
+  text-align: end;
+}
+.citation{
+  margin: 24px 0;
+  font-family: 'Francois One', sans-serif;
+}
+
+.cita{
+  margin: 56px 0;
+}
+.svg{
+  fill: $c-blanc;
+  margin-right: 8px;
+  width: 24px;
+}
+.lien{
+  &--video{
+    text-decoration: underline;
+  }
+}
+
+.hide {
+  display: none;
+}
+.slideshow-container {
+  width: 100vw;
+  text-align: center;
+  color: $c-blanc;
+  background-color: $c-green;
+  max-width: 1000px;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 64px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: $c-orange;
+  font-weight: bold;
+  font-size: 33px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+}
+.prev{
+  left:0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: $c-text;
+  opacity: 0.8;
+}
+.mySlides{
+  width: 70vw;
+  align-self: center;
+  text-align:initial;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px){
+  body {
+    font-size: $size-text-tab;
+  }
+  main{
+    margin: 0 8vw;
+  }
+  .title{
+    font-size: $size-h1-tab;
+    &--second{
+      font-size: $size-h2-tab;
+    }
+    &--span{
+      line-height:1;
+      color: $c-green;
+    }
+    &--h4{
+      font-size:$size-h4-tab;
+      margin: 16px 0;
+    }
+  }
+  .section{
+    &--banner{
+      .logo{
+        height: 88px;
+        margin-bottom: 56px;
+      }
+      .download{
+        margin-top: 56px;
+        height: 48px;
+        li:nth-child(1){
+          margin-right:56px;
+        }
+        &--image{
+          height:48px;
+        }
+      }
+    }
+    &--marque{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .montage{
+        height: 330px;
+        width: 220px;
+        margin: 56px auto 0;
+        &__el{
+          width:160px;
+        }
+      }
+    }
+    &--choix{
+      .title--second{
+        margin-bottom: 56px;
+      }
+      .choix{
+        margin-top: 56px;
+        background-position-x: 0;
+        .video{
+          width: 160px;
+        }
+      }
+    }
+    &--download{
+      padding-bottom: 200px;
+      .download{
+        height: 48px;
+        margin-top: 56px;
+        li:nth-child(1){
+          margin-right:56px;
+        }
+        &--image{
+          height:48px;
+        }
+      }
+    }
+    &--probleme{
+      .cita{
+        margin: 72px 0;
+      }
+      .liste{
+        padding: 48px 24px;
+      }
+    }
+    &--final,&--test{
+      margin-bottom: 96px;
+    }
+  }
+  .footer{
+    &--title{
+  
+    }
+    .dwt{
+      width:48px;
+    }
+  }
+  .slideshow-container {
+    height: 25vh;
+    width:initial;
+  }
+  .casestudy{
+    .section{
+      &--title{
+        font-size: $size-h3-tab;
+      }
+    }
+  }
+  .citation{
+    font-size: $size-cita-tab;
+  }
+  .figcaption{
+    font-size: $size-fig-tab;
+  }
+}
+@media (min-width: 968px){
+  body {
+    font-size: $size-text-pc;
+  }
+  main{
+    margin: 0 16vw;
+  }
+  .title{
+    margin: 64px 0 0 16px;
+    text-align: center;
+    font-size: $size-h1-pc;
+    &--second{
+      font-size: $size-h2-pc;
+    }
+    &--span{
+      line-height:1;
+      color: $c-green;
+    }
+    &--h4{
+      margin: 16px 0;
+      font-size:$size-h4-pc;
+    }
+    &--h5{
+      font-size:$size-h5-pc;
+    }
+  }
+  .section{
+    &--banner{
+      .texte{
+        margin-bottom: 64px;
+      }
+    }
+    &--marque{
+      position: relative;
+      margin-top: 145px;
+      .balle{
+        position: absolute;
+        right: -25%;
+        z-index: -1;
+      }
+      .liste{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 64px;
+      }
+      p{
+        margin-top:52px;
+      }
+    }
+    &--choix{
+      margin-top: 145px;
+    }
+    &--download{
+      position: relative;
+      margin: 145px 0 160px 0;
+      height: 25vw;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      .title--second{
+        text-align:center;
+      }
+      .texte{
+        text-align:center;
+      }
+    }
+    &--recherche{
+      .slideshow-container{
+        padding: 48px;
+        height: 100%;
+        max-width: none;
+      }
+    }
+    &--probleme{
+      .liste{
+        padding: 48px;
+      }
+    }
+    &--test{
+      .img{
+        display: flex;
+        justify-content:center;
+        .user{
+          max-width: 780px;
+        }
+      }
+    }
+  }
+  .footer{
+    &--title{
+  
+    }
+    .dwt{
+      width:48px;
+    }
+  }
+  .casestudy{
+    .section{
+      &--title{
+          font-size: $size-h3-pc;
+      }
+    }
+  }
+  .citation{
+    font-size: $size-cita-pc;
+  }
+  .cita{
+    margin: 104px 64px;
+  }
+  .mySlides{
+    width:50vw;
+  }
+  .icon{
+    max-width: 150px;
+    &--arrow{
+      max-width: 100px;
+    }
+  }
+  .figcaption{
+    font-size: $size-fig-pc;
+  }
+}
+@media (min-width: 1400px){
+  .section{
+    &--marque{
+      background-position: 100% center;
+    }
+  }
+}
+
+
+
+
