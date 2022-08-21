@@ -490,7 +490,7 @@ picture img {
 .section--banner .qr {
   margin-top: 100px;
   width: 100vw;
-  background-image: url(../assets/images/nadal_2.png);
+  background-image: url(../assets/images/nadal.png);
   background-repeat: no-repeat;
   height: 512px;
   background-position-x: 70%;
@@ -672,6 +672,9 @@ picture img {
 .icon--arrow {
   width: 10vw;
 }
+.icon--rackets {
+  transform: rotate(-135deg);
+}
 
 .footer {
   padding: 40px 0 60px 32px;
@@ -683,7 +686,7 @@ picture img {
 .footer .liste {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   margin: 0;
 }
 .footer .liste__el {
@@ -960,6 +963,9 @@ picture img {
     max-width: 400px;
   }
 
+  .section {
+    padding: 240px 0 0;
+  }
   .section--banner .qr {
     display: flex;
     justify-content: center;
@@ -976,12 +982,17 @@ picture img {
     filter: drop-shadow(-5px -5px 17px #000000);
   }
   .section--banner .qr__el--code {
+    display: flex;
+    flex-direction: column;
     width: 200px;
   }
   .section--banner .qr__el--code img {
     width: 200px;
   }
   .section--banner .qr__el--code p {
+    padding: 16px 0;
+    margin: 0;
+    background-color: #ffffff;
     text-align: center;
   }
   .section--banner .blur {
@@ -998,7 +1009,7 @@ picture img {
     flex-direction: row;
     align-items: inherit;
     justify-content: space-between;
-    height: 576px;
+    height: 656px;
   }
   .section--marque .montage {
     margin: 0;
@@ -1007,22 +1018,45 @@ picture img {
     width: 200px;
   }
   .section--choix {
-    margin-top: 145px;
+    color: #ffffff;
+    position: relative;
+  }
+  .section--choix .title--second {
+    margin-top: 0;
+  }
+  .section--choix .ensemble {
+    z-index: 1;
+    position: absolute;
+    top: 320px;
+    width: 400px;
+    left: 0px;
+  }
+  .section--choix .blur {
+    width: 1280px;
+    position: absolute;
+    height: 800px;
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+  }
+  .section--choix .choix {
+    margin-top: 0;
+    width: 1200px;
+    height: 800px;
+    justify-content: flex-end;
+  }
+  .section--choix .choix .video {
+    width: 200px;
+    margin-right: 15%;
+    z-index: 1;
   }
   .section--download {
-    position: relative;
-    margin: 145px 0 160px 0;
-    height: 25vw;
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-bottom: 300px;
   }
-  .section--download .title--second {
-    text-align: center;
-  }
-  .section--download .texte {
-    text-align: center;
+  .section--download .download {
+    justify-content: flex-start;
   }
   .section--recherche .slideshow-container {
     padding: 48px;
@@ -1040,6 +1074,14 @@ picture img {
     max-width: 780px;
   }
 
+  .footer .liste {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+  }
   .footer .dwt {
     width: 48px;
   }
@@ -1075,10 +1117,6 @@ picture img {
   .header__el--img img {
     width: 240px;
   }
-
-  .section--marque {
-    background-position: 100% center;
-  }
 }
 @media (min-height: 400px) and (min-width: 968px) {
   .header__el--logo {
@@ -1086,6 +1124,14 @@ picture img {
   }
   .header__el--img img {
     width: 160px;
+  }
+
+  .section--choix .choix, .section--choix .blur {
+    width: 100vw;
+    height: 600px;
+  }
+  .section--choix .choix .video, .section--choix .blur .video {
+    width: 176px;
   }
 }
 @media (min-height: 600px) and (min-width: 968px) {
@@ -1095,6 +1141,14 @@ picture img {
   .header__el--img img {
     width: 200px;
   }
+
+  .section--choix .choix, .section--choix .blur {
+    width: 100vw;
+    height: 800px;
+  }
+  .section--choix .choix .video, .section--choix .blur .video {
+    width: 200px;
+  }
 }
 @media (min-height: 600px) and (min-width: 1400px) {
   .header__el--logo {
@@ -1102,6 +1156,17 @@ picture img {
   }
   .header__el--img img {
     width: 240px;
+  }
+
+  .section--choix .choix, .section--choix .blur {
+    width: 1280px;
+    height: 800px;
+  }
+  .section--choix .choix .video, .section--choix .blur .video {
+    width: 280px;
+  }
+  .section--choix .ensemble {
+    left: 10%;
   }
 }
 

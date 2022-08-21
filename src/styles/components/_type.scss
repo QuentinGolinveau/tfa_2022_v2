@@ -186,7 +186,7 @@ picture{
     .qr{
       margin-top: 100px;
       width: 100vw;
-      background-image: url(../assets/images/nadal_2.png);
+      background-image: url(../assets/images/nadal.png);
       background-repeat: no-repeat;
       height: 512px;
       background-position-x: 70%;
@@ -379,6 +379,9 @@ picture{
   &--arrow{
     width:10vw;
   }
+  &--rackets{
+    transform: rotate(-135deg);
+  }
 }
 .footer{
   padding: 40px 0 60px 32px;
@@ -389,7 +392,7 @@ picture{
   .liste{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     &__el{
       margin: 12px;
@@ -679,6 +682,7 @@ picture{
     }
   }
   .section{
+    padding: 240px 0 0;
     &--banner{
       .qr{
         display: flex;
@@ -694,11 +698,16 @@ picture{
             filter: drop-shadow(-5px -5px 17px #000000);
           }
           &--code{
+            display: flex;
+            flex-direction: column;
             width: 200px;
             img{
               width: 200px;
             }
             p{
+              padding: 16px 0 ;
+              margin: 0;
+              background-color: $c-blanc;
               text-align: center;
             }
           }
@@ -718,7 +727,7 @@ picture{
       flex-direction: row;
       align-items:inherit;
       justify-content: space-between;
-      height: 576px;
+      height: 656px;
       .montage{
         margin: 0;
         &__el{
@@ -727,21 +736,44 @@ picture{
       }
     }
     &--choix{
-      margin-top: 145px;
+      color: $c-blanc;
+      position: relative;
+      .title--second{
+        margin-top: 0;
+      }
+      .ensemble{
+        z-index: 1;
+        position: absolute;
+        top: 320px;
+        width: 400px;
+        left: 0px;
+      }
+      .blur{
+        width: 1280px;
+        position: absolute;
+        height: 800px;
+        backdrop-filter: blur(2px);
+      }
+      .choix{
+        margin-top: 0;
+        width: 1200px;
+        height: 800px;
+        justify-content: flex-end;
+        .video{
+          width: 200px;
+          margin-right: 15%;
+          z-index: 1;
+        }
+      }
+
     }
     &--download{
-      position: relative;
-      margin: 145px 0 160px 0;
-      height: 25vw;
-      display: flex;
       flex-direction: column;
-      justify-content:center;
-      align-items: center;
-      .title--second{
-        text-align:center;
-      }
-      .texte{
-        text-align:center;
+      justify-content: center;
+      align-items: flex-start;
+      padding-bottom: 300px;
+      .download{
+        justify-content: flex-start;
       }
     }
     &--recherche{
@@ -767,8 +799,13 @@ picture{
     }
   }
   .footer{
-    &--title{
-  
+    .liste{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0;
+      align-items: center;
+      justify-content: space-around;
     }
     .dwt{
       width:48px;
@@ -812,7 +849,6 @@ picture{
   }
   .section{
     &--marque{
-      background-position: 100% center;
     }
   }
 }
@@ -825,6 +861,17 @@ picture{
       &--img{
         img{
           width:160px;
+        }
+      }
+    }
+  }
+  .section{
+    &--choix{
+      .choix, .blur{
+        width: 100vw;
+        height: 600px;
+        .video{
+          width: 176px;
         }
       }
     }
@@ -843,6 +890,18 @@ picture{
       }
     }
   }
+  .section{
+    &--choix{
+      .choix, .blur{
+        width: 100vw;
+        height: 800px;
+        .video{
+          width: 200px;
+        }
+      }
+    }
+  }
+
 }
 @media (min-height: 600px) and (min-width: 1400px) {
   .header{
@@ -854,6 +913,20 @@ picture{
         img{
           width:240px;
         }
+      }
+    }
+  }
+  .section{
+    &--choix{
+      .choix, .blur{
+        width: 1280px;
+        height: 800px;
+        .video{
+          width: 280px;
+        }
+      }
+      .ensemble{
+        left: 10%;
       }
     }
   }

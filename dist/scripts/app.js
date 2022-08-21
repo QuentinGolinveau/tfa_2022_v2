@@ -45,7 +45,7 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(".section--choix .fond--image", {
 
 var ajd = new Date();
 var year = ajd.getFullYear();
-var copyright = document.querySelector(".copyright a");
+var copyright = document.querySelector(".liste__el--copyright a");
 copyright.innerHTML = "©" + year + " QuentinGolinveau"; //Slider
 
 var slideIndex = 1;
