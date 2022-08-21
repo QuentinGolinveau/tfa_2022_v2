@@ -36,7 +36,6 @@ copyright.innerHTML = "©"+ year +" QuentinGolinveau";
 var nextButton = document.querySelector(".next");
 var prevButton = document.querySelector(".prev");
 var textSlide = document.querySelector(".text");
-var slides = document.querySelector(".mySlides");
 var slidesStop = document.querySelectorAll(".slideshow-container a");
 var compteurSlider=0;
 
