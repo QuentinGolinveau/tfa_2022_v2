@@ -120,7 +120,8 @@ picture{
   }
 }
 .title{
-  margin: 26px 0 0 16px;
+  text-align: center;
+  margin: 32px 0 0;
   font-size: 16px;
   color: $c-text;
   a{
@@ -279,7 +280,13 @@ picture{
       width:100vw;
     }
   }
+  &--projet, &--probleme, &--recherche, &--test, &--final{
+    .texte{
+      margin: 32px 0 40px;
+    }
+  }
   &--projet{
+    padding-top: 48px;
     .texte{
       grid-row: 2;
       grid-column: 2/-1;
@@ -307,7 +314,7 @@ picture{
     .content{
       grid-row: 3;
       grid-column: 1/-1;
-      margin: 0 -16px;
+      margin: 40px -16px 0;
     }
     .slideshow-container{
       padding: 24px;
@@ -329,7 +336,7 @@ picture{
       .liste{
         grid-row: 4;
         grid-column: 1/-1;
-        background-color: $c-green;
+        background-color: $c-text;
         color: $c-blanc;
         margin: 0 -16px;
         padding: 24px;
@@ -353,6 +360,7 @@ picture{
       .img{
         grid-row: 3;
         grid-column: 1/-1;
+        margin: 40px 0 0;
       }
   }
   &--final,&--test{
@@ -365,7 +373,15 @@ picture{
       }
       .img{
         grid-row: 3;
-        grid-column: 1/-1;
+        grid-column: 2/-1;
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 0;
+      }
+      .fond{
+        &--image{
+          width:40vw;
+        }
       }
   }
 }
@@ -419,7 +435,7 @@ picture{
 }
 
 .cita{
-  margin: 56px 0;
+  margin: 80px 0;
 }
 .svg{
   fill: $c-blanc;
@@ -428,7 +444,17 @@ picture{
 }
 .lien{
   &--video{
+    color: $c-text;
     text-decoration: underline;
+    background-color: $c-blanc;
+    &:visited{
+      color: $c-blanc;
+      background-color:$c-green;
+    }
+    &:hover{
+      color: $c-blanc;
+      background-color: $c-text;
+    }
   }
 }
 
@@ -439,7 +465,7 @@ picture{
   width: 100vw;
   text-align: center;
   color: $c-blanc;
-  background-color: $c-green;
+  background-color: $c-text;
   max-width: 1000px;
   height: 30vh;
   position: relative;
@@ -456,7 +482,7 @@ picture{
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: $c-orange;
+  color: $c-blanc;
   font-weight: bold;
   font-size: 33px;
   -webkit-transition: 0.6s ease;
@@ -478,7 +504,8 @@ picture{
 }
 
 .prev:hover, .next:hover {
-  background-color: $c-text;
+  color: $c-text;
+  background-color: $c-blanc;
   opacity: 0.8;
 }
 .mySlides{
@@ -611,6 +638,14 @@ picture{
         }
       }
     }
+    &--projet, &--probleme, &--recherche, &--test, &--final{
+      .texte{
+        margin: 48px 0;
+      }
+    }
+    &--projet{
+      padding-top: 64px;
+    }
     &--probleme{
       .cita{
         margin: 72px 0;
@@ -621,6 +656,16 @@ picture{
     }
     &--final,&--test{
       margin-bottom: 96px;
+    }
+    &--final{
+      .img{
+        justify-content:inherit;
+      }
+      .fond{
+        &--image{
+          width:24vw
+        }
+      }
     }
   }
   .footer{
@@ -786,6 +831,9 @@ picture{
         max-width: none;
       }
     }
+    &--projet{
+      padding-top: 88px;
+    }
     &--probleme{
       .liste{
         padding: 48px;
@@ -800,6 +848,16 @@ picture{
         }
       }
     }
+    &--final{
+      .fond{
+        &--image{
+          width:16vw
+        }
+      }
+    }
+  }
+  .texte{
+    max-width: 640px;
   }
   .footer{
     .liste{
@@ -841,6 +899,22 @@ picture{
   }
 }
 @media (min-width: 1400px){
+  body {
+    font-size: 25px;
+  }
+  .casestudy{
+    .section{
+      &--title{
+          font-size: $size-h1-pc;
+      }
+    }
+  }
+  .citation{
+    font-size: $size-cita-pc;
+  }
+  .figcaption{
+    font-size: $size-fig-pc;
+  }
   .header{
     &__el{
       &--img{
@@ -848,11 +922,27 @@ picture{
           width:240px;
         }
       }
+      &--compo{
+        .slogan{
+          font-size: 58px;
+          max-width: 400px;
+        }
+      }
     }
   }
   .section{
     &--marque{
     }
+    &--final{
+      .fond{
+        &--image{
+          width:12vw
+        }
+      }
+    }
+  }
+  .texte{
+    max-width: 640px;
   }
 }
 @media (min-height: 400px) and (min-width: 968px) {
