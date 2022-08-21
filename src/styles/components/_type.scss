@@ -1,4 +1,4 @@
-html{
+ html{
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -26,7 +26,17 @@ body {
     &--logo{
       height: 40px;
     }
+    &--compo{
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      p{
+        display: none;
+      }
+    }
     &--img{
+      filter: drop-shadow(-5px -5px 17px #000000);
       img{
         width: 160px;
       }
@@ -198,6 +208,7 @@ picture{
       width: 180px;
       margin: 40px auto 0;
       &__el{
+        filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
         width:120px;
         position: absolute;
         &--marques{
@@ -503,6 +514,27 @@ picture{
   main{
     margin: 0 8vw;
   }
+  .header{
+    &__el{
+      &--compo{
+        width: 100%;
+        justify-content: space-evenly;
+        p{
+          font-size: $size-h1-tab;
+          display: block;
+          color: $c-blanc;
+          text-transform: uppercase;
+          text-align: center;
+          max-width: 240px;
+        }
+      }
+      &--img{
+        img{
+          width: 200px;
+        }
+      }
+    }
+  }
   .title{
     font-size: $size-h1-tab;
     &--second{
@@ -616,13 +648,12 @@ picture{
     font-size: $size-text-pc;
   }
   main{
-    margin: 0 16vw;
+    margin: 0 12vw;
   }
   .title{
-    margin: 64px 0 0 16px;
-    text-align: center;
     font-size: $size-h1-pc;
     &--second{
+      text-align:left;
       font-size: $size-h2-pc;
     }
     &--span{
@@ -637,27 +668,62 @@ picture{
       font-size:$size-h5-pc;
     }
   }
+  .header{
+    &__el{
+      &--compo{
+        p{
+          font-size: $size-h1-pc;
+          max-width: 400px;
+        }
+      }
+    }
+  }
   .section{
     &--banner{
-      .texte{
-        margin-bottom: 64px;
+      .qr{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        background-position: bottom;
+        height: 800px;
+        &__el{
+          display: block;
+          &--mockup{
+            height: 560px;
+            filter: drop-shadow(-5px -5px 17px #000000);
+          }
+          &--code{
+            width: 200px;
+            img{
+              width: 200px;
+            }
+            p{
+              text-align: center;
+            }
+          }
+        }
+      }
+      .blur{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        backdrop-filter: blur(3px);
+        width: 1280px;
+        height: inherit;
       }
     }
     &--marque{
-      position: relative;
-      margin-top: 145px;
-      .balle{
-        position: absolute;
-        right: -25%;
-        z-index: -1;
-      }
-      .liste{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 64px;
-      }
-      p{
-        margin-top:52px;
+      flex-direction: row;
+      align-items:inherit;
+      justify-content: space-between;
+      height: 576px;
+      .montage{
+        margin: 0;
+        &__el{
+          width:200px;
+        }
       }
     }
     &--choix{
@@ -735,9 +801,60 @@ picture{
   }
 }
 @media (min-width: 1400px){
+  .header{
+    &__el{
+      &--img{
+        img{
+          width:240px;
+        }
+      }
+    }
+  }
   .section{
     &--marque{
       background-position: 100% center;
+    }
+  }
+}
+@media (min-height: 400px) and (min-width: 968px) {
+  .header{
+    &__el{
+      &--logo{
+        height:48px;
+      }
+      &--img{
+        img{
+          width:160px;
+        }
+      }
+    }
+  }
+}
+@media (min-height: 600px) and (min-width: 968px) {
+  .header{
+    &__el{
+      &--logo{
+        height:64px;
+      }
+      &--img{
+        img{
+          width:200px;
+        }
+      }
+    }
+  }
+}
+@media (min-height: 600px) and (min-width: 1400px) {
+  .header{
+    &__el{
+      &--logo{
+        height:80px;
+      }
+      &--img{
+        img{
+          width:240px;
+        }
+      }
     }
   }
 }
