@@ -287,7 +287,7 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../assets/images/air-jordan-12.png);
+  background-image: url(../assets/images/fond.png);
   background-position-x: 25%;
   flex-direction: column;
   align-content: center;
@@ -304,7 +304,7 @@ body {
   flex-direction: row;
   align-items: center;
 }
-.header__el--compo p {
+.header__el--compo .slogan {
   display: none;
 }
 .header__el--img {
@@ -786,10 +786,9 @@ picture img {
 
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
   -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
 @-webkit-keyframes fade {
@@ -808,6 +807,10 @@ picture img {
     opacity: 1;
   }
 }
+.stop {
+  pointer-events: none;
+}
+
 @media (min-width: 768px) {
   body {
     font-size: 18px;
@@ -821,7 +824,7 @@ picture img {
     width: 100%;
     justify-content: space-evenly;
   }
-  .header__el--compo p {
+  .header__el--compo .slogan {
     font-size: 25px;
     display: block;
     color: #ffffff;
@@ -958,7 +961,7 @@ picture img {
     font-size: 33px;
   }
 
-  .header__el--compo p {
+  .header__el--compo .slogan {
     font-size: 44px;
     max-width: 400px;
   }

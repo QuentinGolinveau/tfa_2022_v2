@@ -14,141 +14,87 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(".balle", {
-  duration: 1.5,
-  ease: "bounce.out",
-  x: -2500,
-  scrollTrigger: {
-    trigger: ".section--marque",
-    start: "center bottom"
-  }
-});
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(".balle--v2", {
-  duration: 1,
-  ease: "bounce.out",
-  y: -400,
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(".mockup", {
   opacity: 0,
+  y: -100
+}, {
+  duration: 0.7,
+  y: 0,
+  opacity: 1
+});
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(".slogan--service", {
+  opacity: 0,
+  x: -100
+}, {
+  duration: 0.7,
+  x: 0,
+  opacity: 1
+});
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(".slogan--raquette", {
+  opacity: 0,
+  x: 100
+}, {
+  duration: 0.7,
+  x: 0,
+  opacity: 1
+});
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.fromTo(".montage", {
+  x: -500,
+  opacity: 0
+}, {
+  duration: 1,
+  x: 0,
+  opacity: 1,
   scrollTrigger: {
     trigger: ".section--choix",
-    start: "top top"
+    start: "top bottom",
+    toggleActions: "restart none resume none"
   }
 });
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(".section--choix .fond--image", {
-  opacity: 0.2,
-  duration: 0.5,
-  x: -500,
-  scrollTrigger: {
-    trigger: ".section--choix",
-    start: "center bottom"
-  }
-}); //Copyright
-
 var ajd = new Date();
 var year = ajd.getFullYear();
 var copyright = document.querySelector(".liste__el--copyright a");
-copyright.innerHTML = "©" + year + " QuentinGolinveau"; //Slider
-
-var slideIndex = 1;
-showSlides(slideIndex);
-var nextButton = document.querySelectorAll(".next");
-var prevButton = document.querySelectorAll(".prev");
-
-for (var i = 0; i < nextButton.length; i++) {
-  if (prevButton) {
-    if (i == 0) {
-      prevButton[i].addEventListener('click', function () {
-        plusSlides(-1, "slides1");
-      });
-    } else if (i == 1) {
-      prevButton[i].addEventListener('click', function () {
-        plusSlides(-1, "slides2");
-      });
-    } else if (i == 2) {
-      prevButton[i].addEventListener('click', function () {
-        plusSlides(-1, "slides3");
-      });
-    } else if (i == 3) {
-      prevButton[i].addEventListener('click', function () {
-        plusSlides(-1, "slides4");
-      });
-    } else if (i == 4) {
-      prevButton[i].addEventListener('click', function () {
-        plusSlides(-1, "slides5");
-      });
-    }
+copyright.innerHTML = "©" + year + " QuentinGolinveau";
+var nextButton = document.querySelector(".next");
+var prevButton = document.querySelector(".prev");
+var textSlide = document.querySelector(".text");
+var slides = document.querySelector(".mySlides");
+var slidesStop = document.querySelectorAll(".slideshow-container a");
+var compteurSlider = 0;
+var infos = ["Pour 57% des interrogés, le prix de la raquette compte pour beaucoup dans leur&nbsp;choix.", "Pour seulement 46% des interrogés, la compatibilité avec leur jeu compte dans leur&nbsp;choix.", "Seuls 19% des interrogés prennent en compte leur niveau lors de leur&nbsp;choix.", "Seuls 32% des interrogés demandent des conseils à des spécialistes pour faire leur&nbsp;choix."];
+nextButton.addEventListener("click", function (e) {
+  if (compteurSlider == 3) {
+    compteurSlider = 0;
+  } else {
+    compteurSlider = compteurSlider + 1;
   }
 
-  if (nextButton) {
-    if (i == 0) {
-      nextButton[i].addEventListener('click', function () {
-        plusSlides(1, "slides1");
-      });
-    } else if (i == 1) {
-      nextButton[i].addEventListener('click', function () {
-        plusSlides(1, "slides2");
-      });
-    } else if (i == 2) {
-      nextButton[i].addEventListener('click', function () {
-        plusSlides(1, "slides3");
-      });
-    } else if (i == 3) {
-      nextButton[i].addEventListener('click', function () {
-        plusSlides(1, "slides4");
-      });
-    } else if (i == 4) {
-      nextButton[i].addEventListener('click', function () {
-        plusSlides(1, "slides5");
-      });
-    }
+  insert();
+});
+prevButton.addEventListener("click", function (e) {
+  if (compteurSlider == 0) {
+    compteurSlider = 3;
+  } else {
+    compteurSlider = compteurSlider - 1;
+  }
+
+  insert();
+});
+
+function stop() {
+  for (var i = 0; i < slidesStop.length; i++) {
+    slidesStop[i].classList.toggle("stop");
   }
 }
 
-function plusSlides(n, etatSlides) {
-  showSlides(slideIndex += n, etatSlides);
-}
-
-function showSlides(n, etatSlides) {
-  var i;
-  var slides = document.querySelectorAll(".mySlides");
-  var slidesDeux = document.querySelectorAll(".mySlidesDeux");
-  var slidesTrois = document.querySelectorAll(".mySlidesTrois");
-  var slidesQuatre = document.querySelectorAll(".mySlidesQuatre");
-
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-
-  if (etatSlides === "slides1") {
-    for (i = 0; i < slides.length; i++) {
-      slides[i].classList.add("hide");
-    }
-
-    slides[slideIndex - 1].classList.remove("hide");
-  }
-
-  if (etatSlides === "slides2") {
-    for (i = 0; i < slides.length; i++) {
-      slidesDeux[i].classList.add("hide");
-    }
-
-    slidesDeux[slideIndex - 1].classList.remove("hide");
-  }
-
-  if (etatSlides === "slides3") {
-    for (i = 0; i < slides.length; i++) {
-      slidesTrois[i].classList.toggle("hide");
-    }
-  }
-
-  if (etatSlides === "slides4") {
-    for (i = 0; i < slides.length; i++) {
-      slidesQuatre[i].classList.toggle("hide");
-    }
-  }
+function insert() {
+  textSlide.classList.add("fade");
+  stop();
+  setTimeout(function () {
+    stop();
+    textSlide.classList.remove("fade");
+  }, 1000);
+  textSlide.innerHTML = infos[compteurSlider];
 }
 
 /***/ }),
